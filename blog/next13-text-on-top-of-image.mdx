@@ -1,0 +1,31 @@
+---
+title: "Place text on top of images in Nextjs 13"
+author: "Rodrigo Valente"
+date: "2023-07-11"
+excerpt: "Use images as the background of you Nextjs 13 components and place texts or other components on top of it."
+categories: ["Next.js", "Tailwind"]
+---
+
+Now I am using MDX files!
+
+```javascript
+<div className="grid grid-cols-1 gap-y-2 md:grid-cols-3 md:gap-x-2">
+  {myfiles.map(x => (
+    <Link href={`/insights/${x.slug}`} key={x.slug}>
+      <div className="relative w-full h-72 hover:opacity-80">
+        {/* background image */}
+        <Image
+          src={`/images/insights/${x.slug}.jpg`}
+          alt={x.slug}
+          fill
+          style={{ objectFit: "cover" }} // objectFit="cover" on Nextjs <Image 13
+        >
+        {/* Text on top of the image */}
+        <div className="relative z-10 flex flex-col items-left justify-end p-3 h-full text-white text-lg ">
+          {x.frontmatter.title}
+        </div>
+      </div>
+    </Link>
+  ))}
+</div>
+```
