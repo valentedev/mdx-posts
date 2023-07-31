@@ -1,0 +1,20 @@
+---
+title: "Terça-feira"
+author: "Rodrigo Valente"
+date: "2023-07-11"
+excerpt: "Javascript code snippet"
+categories: ["Javascript"]
+---
+
+#Javascript
+
+```javascript
+var log = ['test'];
+var obj = {
+  get latest () {
+    if (log.length == 0) return undefined;
+    return log[log.length - 1]
+  }
+}
+console.log (obj.latest); // Retornará "test".
+```
