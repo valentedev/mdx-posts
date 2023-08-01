@@ -1,0 +1,59 @@
+---
+title: "MDX and Next.js"
+author: "Rodrigo Valente"
+date: "2023-08-01"
+excerpt: "How to use MDX files in your Next.js application."
+categories: ["next.js"]
+---
+
+# Next.js and MDX files
+
+The best way to have a blog about programming is to use MD files. You can add code snippets, videos and images without depending of an API or database to texts. Today we are going to see how I have created this Blog using Next.js and MDX.
+
+## What is MDX?
+
+- Create a github repository with all your posts;
+- Use MDX Remote (compileMDX) to get meta fields from Post files in from Github repo with `getPostByName()`
+- Pull the list of file from Github and generate an array of files with `getPostsMeta()`
+- Render a list of Posts in
+-
+
+Both fields must match
+
+```
+---
+title: "MDX and Next.js"
+author: "Rodrigo Valente"
+date: "2023-08-01"
+excerpt: "How to use MDX files in your Next.js application."
+categories: ["next.js"]
+---
+```
+
+```jsx
+const { frontmatter, content } = await compileMDX<{
+    // These files must match github blog posts
+    title: string;
+    author: string;
+    date: string;
+    excerpt: string;
+    categories: string[];
+  }>({
+    source: rawMDX,
+    options: {
+      parseFrontmatter: true,
+      mdxOptions: {
+        rehypePlugins: [
+          rehypeHighlight,
+          rehypeSlug,
+          [
+            rehypeAutolinkHeadings,
+            {
+              behavior: "wrap",
+            },
+          ],
+        ],
+      },
+    },
+  });
+```
