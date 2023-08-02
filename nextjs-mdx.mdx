@@ -6,17 +6,17 @@ excerpt: "How to use MDX files in your Next.js application."
 categories: ["next.js"]
 ---
 
-# Next.js and MDX files
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas iaculis quis nibh in accumsan. Aliquam id nibh magna. Pellentesque vitae diam tincidunt, molestie lorem a, vehicula mauris. Donec odio tortor, fermentum id lectus quis, tristique vulputate lacus. Sed ante diam, volutpat id varius vitae, venenatis a velit. Aliquam aliquet imperdiet elit. Etiam elementum diam nibh. Duis a iaculis nibh. Pellentesque pretium nisi ex, a mollis tellus accumsan in. Ut vitae tristique felis. Phasellus et mauris ac sem euismod consectetur.
 
-The best way to have a blog about programming is to use MD files. You can add code snippets, videos and images without depending of an API or database to texts. Today we are going to see how I have created this Blog using Next.js and MDX.
+Curabitur porta molestie nunc rutrum dictum. Maecenas semper arcu sem, nec ultrices ipsum pulvinar quis. Mauris lacus lorem, aliquam in sapien quis, dapibus placerat lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a faucibus sem, sit amet efficitur eros. Donec nulla ipsum, sagittis ac commodo aliquet, auctor eget tellus. Phasellus vel felis quis ligula iaculis interdum nec in odio. Suspendisse a libero non neque pretium pellentesque. Curabitur nunc justo, tempus dictum viverra id, efficitur non purus. Donec sollicitudin, odio in dignissim condimentum, justo neque posuere erat, at pulvinar velit lacus eget ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras at justo sodales, iaculis lectus aliquet, ultricies neque. Ut fringilla sed erat nec malesuada. Donec sit amet malesuada urna. Nam non leo nec ex luctus ullamcorper. Fusce hendrerit euismod odio, quis facilisis orci sagittis vitae.
+
+Etiam id sem tristique, feugiat est ut, pharetra lorem. Quisque quis justo eleifend, facilisis leo eget, egestas enim. Sed non nunc nulla. Nam vitae venenatis turpis. Ut congue arcu nisi, in interdum sem iaculis pellentesque. Duis rutrum sapien orci. Aenean vitae purus mi. Morbi cursus laoreet elit et volutpat.
 
 ## What is MDX?
 
 - Create a github repository with all your posts;
 - Use MDX Remote (compileMDX) to get meta fields from Post files in from Github repo with `getPostByName()`
 - Pull the list of file from Github and generate an array of files with `getPostsMeta()`
-- Render a list of Posts in
--
 
 Both fields must match
 
@@ -30,7 +30,7 @@ categories: ["next.js"]
 ---
 ```
 
-```jsx showLineNumbers title="Some title"
+```jsx
 const { frontmatter, content } = await compileMDX<{
     // These files must match github blog posts
     title: string;
